@@ -9,6 +9,12 @@ packages = [{include = "advent_of_code"}]
 [tool.poetry.dependencies]
 python = "^3.8"
 numpy = "^1.23.5"
+pylint = "^2.15.8"
+black = "^22.10.0"
+
+[tool.black]
+line-length = 120
+target-version = ['py38']
 
 
 [build-system]
