@@ -1,10 +1,10 @@
 import re
 
-values = [line.strip() for line in open('input', 'r')]
+values = [line.strip() for line in open("input", "r")]
 
 print(values)
 
-values = [list(map(int, re.findall(r'\d+', l))) for l in values]
+values = [list(map(int, re.findall(r"\d+", l))) for l in values]
 
 s1 = set()
 s2 = set()

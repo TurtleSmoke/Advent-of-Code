@@ -77,7 +77,7 @@ def add(a, b):
     return x
 
 
-lines = list(map(eval, open('input', 'r').read().splitlines()))
+lines = list(map(eval, open("input", "r").read().splitlines()))
 print("Part 1:", magnitude(reduce(add, lines)))
 print(
     "Part 2:",

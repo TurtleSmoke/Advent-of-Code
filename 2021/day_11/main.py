@@ -2,8 +2,7 @@ import itertools
 
 import numpy as np
 
-values = np.array([[int(x) for x in line]
-                   for line in open('input', 'r').read().splitlines()])
+values = np.array([[int(x) for x in line] for line in open("input", "r").read().splitlines()])
 
 lx = len(values)
 ly = len(values[0])
@@ -30,8 +29,7 @@ for _ in range(100):
 
 print(res)
 
-values = np.array([[int(x) for x in line]
-                   for line in open('input', 'r').read().splitlines()])
+values = np.array([[int(x) for x in line] for line in open("input", "r").read().splitlines()])
 
 for r in itertools.count(0):
     if np.sum(values == 0) == np.size(values):
@@ -48,8 +46,7 @@ for r in itertools.count(0):
 
     while stack:
         x, y = stack.pop()
-        for i, j in [(1, 1), (1, 0), (1, -1), (0, -1), (0, 1), (-1, -1),
-                     (-1, 0), (-1, 1)]:
+        for i, j in [(1, 1), (1, 0), (1, -1), (0, -1), (0, 1), (-1, -1), (-1, 0), (-1, 1)]:
             cx, cy = x + i, y + j
             if 0 <= cx < lx and 0 <= cy < ly and values[cx][cy] != 0:
                 values[cx][cy] = (values[cx][cy] + 1) % 10

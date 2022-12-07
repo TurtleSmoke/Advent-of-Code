@@ -20,12 +20,12 @@ def rotations():
                 yield np.array([vi, vj, vk])
 
 
-def common_beacon(i, j, common_dist):
-    s1, s2 = scanners[i], scanners[j]
-    s1_beacon = hashes[i][common_dist][0]
+def common_beacon(x, y, common_dist):
+    s1, s2 = scanners[x], scanners[y]
+    s1_beacon = hashes[x][common_dist][0]
     for r in rotations():
         s2_rotated = s2 @ r
-        for s2_beacon in hashes[j][common_dist]:
+        for s2_beacon in hashes[y][common_dist]:
             diff = s1[s1_beacon] - s2_rotated[s2_beacon]
             s2_in_s1 = set(map(tuple, s2_rotated + diff))
             if len(set(map(tuple, s1)) & s2_in_s1) >= 12:
@@ -33,16 +33,12 @@ def common_beacon(i, j, common_dist):
 
 
 scanners = [
-    np.array(list(tuple(map(int, coords.split(',')))
-                  for coords in scanner.splitlines()[1:]))
-    for scanner in open('input', 'r').read().split("\n\n")
+    np.array(list(tuple(map(int, coords.split(","))) for coords in scanner.splitlines()[1:]))
+    for scanner in open("input", "r").read().split("\n\n")
 ]
 
 hashes = [
-    {
-        tuple(sorted(abs(coords[i, :] - coords[j, :]))): (i, j)
-        for i, j in combinations(range(len(coords)), 2)
-    }
+    {tuple(sorted(abs(coords[i, :] - coords[j, :]))): (i, j) for i, j in combinations(range(len(coords)), 2)}
     for coords in scanners
 ]
 

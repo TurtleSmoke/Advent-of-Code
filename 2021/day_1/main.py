@@ -1,4 +1,4 @@
-with open('input', 'r') as file:
+with open("input", "r") as file:
     values = [int(line) for line in file.read().splitlines()]
 
 print(sum(a < b for a, b in zip(values[:-1], values[1:])))

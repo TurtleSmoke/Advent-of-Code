@@ -1,23 +1,23 @@
 import operator
+from functools import reduce
 
-values = [[int(x) for x in line]
-          for line in open('input', 'r').read().splitlines()]
+values = [[int(x) for x in line] for line in open("input", "r").read().splitlines()]
 
-min = 0
+min_val = 0
 lx = len(values)
 ly = len(values[0])
 for x in range(lx):
     for y in range(ly):
         m = values[x][y]
-        if not any(0 <= x + i < lx and 0 <= y + j < ly and values[x + i][y +
-                                                                         j] <= m
-                   for i, j in [(1, 0), (-1, 0), (0, 1), (0, -1)]):
-            min += m + 1
+        if not any(
+            0 <= x + i < lx and 0 <= y + j < ly and values[x + i][y + j] <= m
+            for i, j in [(1, 0), (-1, 0), (0, 1), (0, -1)]
+        ):
+            min_val += m + 1
 
-print(min)
+print(min_val)
 
-values = [[[int(x), False] for x in line]
-          for line in open('input', 'r').read().splitlines()]
+values = [[[int(x), False] for x in line] for line in open("input", "r").read().splitlines()]
 
 low_point = []
 lx = len(values)
@@ -25,9 +25,10 @@ ly = len(values[0])
 for x in range(lx):
     for y in range(ly):
         m = values[x][y]
-        if not any(0 <= x + i < lx and 0 <= y + j < ly and
-                   values[x + i][y + j] <= m
-                   for i, j in [(1, 0), (-1, 0), (0, 1), (0, -1)]):
+        if not any(
+            0 <= x + i < lx and 0 <= y + j < ly and values[x + i][y + j] <= m
+            for i, j in [(1, 0), (-1, 0), (0, 1), (0, -1)]
+        ):
             low_point.append((x, y))
 
 bassin = []
@@ -43,10 +44,7 @@ for cell in low_point:
         size += 1
 
         for i, j in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
-            if 0 <= x + i < lx \
-                    and 0 <= y + j < ly \
-                    and values[x + i][y + j][0] < 9 \
-                    and not values[x + i][y + j][1]:
+            if 0 <= x + i < lx and 0 <= y + j < ly and values[x + i][y + j][0] < 9 and not values[x + i][y + j][1]:
                 values[x + i][y + j][1] = True
                 current_bassin.append((x + i, y + j))
 

@@ -2,8 +2,7 @@ import itertools
 import re
 from collections import defaultdict
 
-x1, x2, y1, y2 = [int(x) for x in
-                  re.findall(r"-?[0-9]+", open('input').read().strip())]
+x1, x2, y1, y2 = [int(x) for x in re.findall(r"-?[0-9]+", open("input").read().strip())]
 
 yd_max = -y1 - 1
 print("Part 1:", yd_max * (yd_max + 1) // 2)

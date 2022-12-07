@@ -1,14 +1,14 @@
-with open('input', 'r') as file:
-    values = [line for line in file.read().splitlines()]
+with open("input", "r") as file:
+    values = file.read().splitlines()
 
 horizontal, depth = 0, 0
 for line in values:
     direction, amount = line.split(" ")
-    if direction == 'forward':
+    if direction == "forward":
         horizontal += int(amount)
-    elif direction == 'up':
+    elif direction == "up":
         depth -= int(amount)
-    elif direction == 'down':
+    elif direction == "down":
         depth += int(amount)
 
 print(horizontal * depth)
@@ -17,12 +17,12 @@ print(horizontal * depth)
 horizontal, depth, aim = 0, 0, 0
 for line in values:
     direction, amount = line.split(" ")
-    if direction == 'forward':
+    if direction == "forward":
         horizontal += int(amount)
         depth += aim * int(amount)
-    elif direction == 'up':
+    elif direction == "up":
         aim -= int(amount)
-    elif direction == 'down':
+    elif direction == "down":
         aim += int(amount)
 
 print(horizontal * depth)

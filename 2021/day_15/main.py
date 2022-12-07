@@ -1,7 +1,6 @@
 from heapq import heappop, heappush
 
-data = [[int(x) for x in line] for line in
-        open('test_input', 'r').read().splitlines()]
+data = [[int(x) for x in line] for line in open("test_input", "r").read().splitlines()]
 
 print(data)
 
@@ -17,8 +16,7 @@ def shortest_path(t):
         for dx, dy in ((0, 1), (1, 0), (1, 0), (-1, 0)):
             x_, y_ = x + dx, y + dy
 
-            if x_ < 0 or x_ >= t * len(data) or \
-                    y_ < 0 or y_ >= t * len(data[0]) or (x_, y_) in seen:
+            if x_ < 0 or x_ >= t * len(data) or y_ < 0 or y_ >= t * len(data[0]) or (x_, y_) in seen:
                 continue
 
             a, am = divmod(x_, len(data))

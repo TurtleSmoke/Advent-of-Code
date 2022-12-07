@@ -1,13 +1,12 @@
 from collections import Counter, defaultdict
 
-with open('input', 'r') as f:
+with open("input", "r") as f:
     polymer, pair = f.read().split("\n\n")
 
-pair = {line.split(' -> ')[0]: line.split(' -> ')[1]
-        for line in pair.splitlines()}
+pair = {line.split(" -> ")[0]: line.split(" -> ")[1] for line in pair.splitlines()}
 
 for j in range(10):
-    poly = ''
+    poly = ""
     for i in range(len(polymer) - 1):
         c1, c2 = polymer[i], polymer[i + 1]
         poly += c1
@@ -19,11 +18,10 @@ for j in range(10):
 occ = Counter(polymer)
 print(max(occ.values()) - min(occ.values()))
 
-with open('input', 'r') as f:
+with open("input", "r") as f:
     polymer, pair = f.read().split("\n\n")
 
-pair = {line.split(' -> ')[0]: line.split(' -> ')[1]
-        for line in pair.splitlines()}
+pair = {line.split(" -> ")[0]: line.split(" -> ")[1] for line in pair.splitlines()}
 
 occ2 = Counter(a + b for a, b in zip(polymer[:-1], polymer[1:]))
 for j in range(40):
