@@ -3,6 +3,7 @@ name = "advent-of-code"
 version = "0.1.0"
 description = "Advent Of Code repo"
 authors = ["TurtleSmoke"]
+license = "MIT"
 readme = "README.md"
 packages = [{include = "advent_of_code"}]
 
