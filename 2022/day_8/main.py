@@ -6,18 +6,14 @@ import numpy as np
 val_input = "input"
 
 tree_grid = np.genfromtxt(val_input, delimiter=1, dtype=int)
-padded_tree_grid = np.pad(tree_grid, 1, constant_values=-1)
-
 tree_dirs = np.array(
     [
-        np.maximum.accumulate(padded_tree_grid, axis=1)[1:-1, :-2],
-        np.maximum.accumulate(padded_tree_grid[:, ::-1], axis=1)[:, ::-1][1:-1, 2:],
-        np.maximum.accumulate(padded_tree_grid, axis=0)[:-2, 1:-1],
-        np.maximum.accumulate(padded_tree_grid[::-1])[::-1][2:, 1:-1],
+        np.rot90(np.maximum.accumulate(np.rot90(np.pad(tree_grid, 1, constant_values=-1), r), axis=1)[1:-1, :-2], -r)
+        for r in range(4)
     ]
 )
 
-print(sum(tree_grid[i, j] > min(tree_dirs[:, i, j]) for i, j in np.ndindex(tree_grid.shape)))
+print(np.sum(np.logical_or.reduce(tree_dirs - tree_grid < 0)))
 
 print(
     max(
