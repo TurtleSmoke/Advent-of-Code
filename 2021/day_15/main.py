@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from heapq import heappop, heappush
 
-data = [[int(x) for x in line] for line in open("test_input", "r").read().splitlines()]
+data = [[int(x) for x in line] for line in open("input", "r").read().splitlines()]
 
 print(data)
 
