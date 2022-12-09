@@ -26,7 +26,8 @@ jobs:
           python-version: ${{ matrix.python-version }}
           cache: 'poetry'
       - name: Install dependencies
+        run: poetry install --no-root
+      - name: Lint with pylint and black
         run: |
-          poetry install --no-root
           poetry run ./scripts/run_pylint.sh
           poetry run ./scripts/run_black.sh
