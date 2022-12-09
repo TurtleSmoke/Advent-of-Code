@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import re
 
 values = [line.strip() for line in open("input", "r")]

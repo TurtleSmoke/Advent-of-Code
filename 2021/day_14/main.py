@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from collections import Counter, defaultdict
 
 with open("input", "r") as f:

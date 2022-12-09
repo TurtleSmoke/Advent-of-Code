@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from math import prod
 
 SUM, PRODUCT, MIN, MAX, LITERAL, GT, LT, EQ = range(8)

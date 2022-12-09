@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/env python
 from collections import defaultdict
 
 file_input = "input"

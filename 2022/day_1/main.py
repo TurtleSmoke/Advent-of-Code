@@ -1,5 +1,4 @@
-#!/bin/python3
-
+#!/usr/bin/env python
 val_input = "input"
 
 val = [sum(int(line.strip()) for line in lines.strip().split("\n")) for lines in open(val_input).read().split("\n\n")]

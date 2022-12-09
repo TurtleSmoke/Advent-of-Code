@@ -1,5 +1,4 @@
-#!/bin/python3
-
+#!/usr/bin/env python
 file_input = "input"
 
 val = open(file_input).read().strip()

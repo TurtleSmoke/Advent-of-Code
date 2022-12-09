@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/env python
 from itertools import product
 
 import numpy as np

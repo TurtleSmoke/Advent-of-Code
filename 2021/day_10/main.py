@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from functools import reduce
 
 values = [list(line) for line in open("input", "r").read().splitlines()]

@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 with open("input", "r") as file:
     values = file.read().splitlines()
 

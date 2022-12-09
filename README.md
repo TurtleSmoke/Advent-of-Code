@@ -37,8 +37,8 @@ poetry install
 
 ### Run solutions
 
-You can run each day's solution using the following command `./main.py`
-directly from the folder containing the solution you want to run.
+While being in a python env, you can run each day's solution with `./main.py`
+directly from the day's folder. Otherwise, use `python main.py`.
 
 ### New day
 

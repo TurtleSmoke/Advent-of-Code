@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 with open("input") as f:
     data = f.read().split("inp w\n")[1:]
 

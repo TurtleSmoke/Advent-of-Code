@@ -1,5 +1,4 @@
-#!/bin/python3
-
+#!/usr/bin/env python
 from copy import deepcopy
 
 file_input = "input"

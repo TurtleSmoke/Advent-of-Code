@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 with open("input", "r") as file:
     values = [int(line) for line in file.read().splitlines()]
 

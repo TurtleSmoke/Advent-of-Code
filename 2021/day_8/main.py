@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 values = [tuple(values.split() for values in line.split("|")) for line in open("input", "r").read().splitlines()]
 
 print(sum(len(value) in (2, 3, 4, 7) for line in values for value in line[1]))

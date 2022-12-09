@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import itertools
 import math
 from functools import reduce

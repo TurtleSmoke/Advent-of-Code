@@ -1,5 +1,4 @@
-#!/bin/python3
-
+#!/usr/bin/env python
 val_input = "input"
 
 t = lambda x: ord(x) % 65 % 23

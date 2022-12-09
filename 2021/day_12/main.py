@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from collections import defaultdict
 
 data = [line.split("-") for line in open("input", "r").read().splitlines()]

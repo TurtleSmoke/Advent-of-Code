@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import numpy as np
 
 with open("input", "r") as f:

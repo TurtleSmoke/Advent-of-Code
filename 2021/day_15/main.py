@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from heapq import heappop, heappush
 
 data = [[int(x) for x in line] for line in open("test_input", "r").read().splitlines()]
