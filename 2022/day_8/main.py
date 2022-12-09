@@ -19,6 +19,7 @@ print(np.sum(np.logical_or.reduce(tree_dirs - tree_grid < 0)))
 tree_dirs = np.array(
     [np.rot90((np.diff(np.maximum.accumulate(np.rot90(tree_grid, r), 1), 1) != 0)[1:-1, :-1], -r) for r in range(4)]
 )
+
 print(4 * (len(tree_grid) - 1) + np.sum(np.logical_or.reduce(tree_dirs)))
 
 print(
@@ -27,10 +28,10 @@ print(
             list(
                 next((i + 1 for i in range(len(tree_view)) if tree_view[i] >= tree_grid[x][y]), len(tree_view))
                 for tree_view in [
-                    tree_grid[x][y - 1:: -1],
-                    tree_grid[x][y + 1::],
-                    tree_grid[x - 1:: -1, y],
-                    tree_grid[x + 1::, y],
+                    tree_grid[x][y - 1 :: -1],
+                    tree_grid[x][y + 1 : :],
+                    tree_grid[x - 1 :: -1, y],
+                    tree_grid[x + 1 : :, y],
                 ]
             )
         )
