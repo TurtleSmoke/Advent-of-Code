@@ -15,6 +15,12 @@ tree_dirs = np.array(
 
 print(np.sum(np.logical_or.reduce(tree_dirs - tree_grid < 0)))
 
+# Without padding using np.diff
+tree_dirs = np.array(
+    [np.rot90((np.diff(np.maximum.accumulate(np.rot90(tree_grid, r), 1), 1) != 0)[1:-1, :-1], -r) for r in range(4)]
+)
+print(4 * (len(tree_grid) - 1) + np.sum(np.logical_or.reduce(tree_dirs)))
+
 print(
     max(
         np.product(
