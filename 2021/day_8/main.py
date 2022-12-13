@@ -32,7 +32,6 @@ for pattern, value in values:
                 cur += "0"
             else:
                 cur += "6"
-    print(cur)
     res += int(cur)
 
 print(res)

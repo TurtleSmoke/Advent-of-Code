@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 from itertools import count
+
 import numpy as np
 
 

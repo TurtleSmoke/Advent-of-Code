@@ -84,6 +84,3 @@ print(
     "Part 2:",
     max(magnitude(add(a, b)) for a, b in itertools.permutations(lines, 2)),
 )
-
-print(3725)
-print(4832)

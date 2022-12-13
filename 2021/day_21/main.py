@@ -63,4 +63,3 @@ def solve_part2(f):
 
 solve_part1("input")
 solve_part2("input")
-print(105619718613031)

@@ -14,7 +14,6 @@ for line in values:
 
 print(horizontal * depth)
 
-
 horizontal, depth, aim = 0, 0, 0
 for line in values:
     direction, amount = line.split(" ")

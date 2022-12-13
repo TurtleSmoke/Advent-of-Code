@@ -3,8 +3,6 @@ from heapq import heappop, heappush
 
 data = [[int(x) for x in line] for line in open("input", "r").read().splitlines()]
 
-print(data)
-
 
 def shortest_path(t):
     heap = [(0, 0, 0)]
