@@ -17,7 +17,7 @@ class Monkey:
 def solve(part1):
     monkeys = list(map(Monkey, open(val_input).read().split("\n\n")))
     prod = lcm(*(monkey.div for monkey in monkeys))
-    for i in range(20 if part1 else 10000):
+    for _ in range(20 if part1 else 10000):
         for monkey in monkeys:
             for item in monkey.items:
                 item = monkey.op(item)
