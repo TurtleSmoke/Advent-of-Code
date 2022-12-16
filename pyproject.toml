@@ -12,6 +12,7 @@ python = "^3.8"
 numpy = "^1.23.5"
 pylint = "^2.15.8"
 black = "^22.10.0"
+shapely = "^2.0.0"
 
 [tool.black]
 line-length = 120
