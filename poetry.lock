@@ -1,4 +1,12 @@
 [[package]]
+name = "absl-py"
+version = "1.3.0"
+description = "Abseil Python Common Libraries, see https://github.com/abseil/abseil-py."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "astroid"
 version = "2.12.13"
 description = "An abstract syntax tree for Python with inference support."
@@ -54,6 +62,21 @@ description = "Cross-platform colored terminal text."
 category = "main"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
+
+[[package]]
+name = "cpmpy"
+version = "0.9.10"
+description = "A numpy-based library for modeling constraint programming problems"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+numpy = ">=1.5"
+ortools = ">=5.0"
+
+[package.extras]
+full = ["minizinc"]
 
 [[package]]
 name = "dill"
@@ -113,6 +136,19 @@ optional = false
 python-versions = ">=3.8"
 
 [[package]]
+name = "ortools"
+version = "9.5.2237"
+description = "Google OR-Tools python libraries and modules"
+category = "main"
+optional = false
+python-versions = ">= 3.6"
+
+[package.dependencies]
+absl-py = ">=0.13"
+numpy = ">=1.13.3"
+protobuf = ">=4.21.5"
+
+[[package]]
 name = "pathspec"
 version = "0.10.3"
 description = "Utility library for gitignore style pattern matching of file paths."
@@ -131,6 +167,14 @@ python-versions = ">=3.7"
 [package.extras]
 docs = ["furo (>=2022.9.29)", "proselint (>=0.13)", "sphinx (>=5.3)", "sphinx-autodoc-typehints (>=1.19.4)"]
 test = ["appdirs (==1.4.4)", "pytest (>=7.2)", "pytest-cov (>=4)", "pytest-mock (>=3.10)"]
+
+[[package]]
+name = "protobuf"
+version = "4.21.12"
+description = ""
+category = "main"
+optional = false
+python-versions = ">=3.7"
 
 [[package]]
 name = "pylint"
@@ -224,9 +268,13 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "6bca4741abc2b3eb95dc3d4b53c2d0e68eac3dd6f3bdb2153a5a3ecb8827e769"
+content-hash = "6db7c915b417e82ab097f0576f88fcf6437ebed72bc483c97bee6b90a6b87b72"
 
 [metadata.files]
+absl-py = [
+    {file = "absl-py-1.3.0.tar.gz", hash = "sha256:463c38a08d2e4cef6c498b76ba5bd4858e4c6ef51da1a5a1f27139a022e20248"},
+    {file = "absl_py-1.3.0-py3-none-any.whl", hash = "sha256:34995df9bd7a09b3b8749e230408f5a2a2dd7a68a0d33c12a3d0cb15a041a507"},
+]
 astroid = [
     {file = "astroid-2.12.13-py3-none-any.whl", hash = "sha256:10e0ad5f7b79c435179d0d0f0df69998c4eef4597534aae44910db060baeb907"},
     {file = "astroid-2.12.13.tar.gz", hash = "sha256:1493fe8bd3dfd73dc35bd53c9d5b6e49ead98497c47b2307662556a5692d29d7"},
@@ -252,6 +300,10 @@ click = [
 colorama = [
     {file = "colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"},
     {file = "colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"},
+]
+cpmpy = [
+    {file = "cpmpy-0.9.10-py3-none-any.whl", hash = "sha256:6336f28c635c93e5a68973c9088906e09c8f308e9a1a5188b073bab46fc22b1a"},
+    {file = "cpmpy-0.9.10.tar.gz", hash = "sha256:b011581ecc376588c648444b3332578914e1c7880f006bd849442fa1f0b38d6c"},
 ]
 dill = [
     {file = "dill-0.3.6-py3-none-any.whl", hash = "sha256:a07ffd2351b8c678dfc4a856a3005f8067aea51d6ba6c700796a4d9e280f39f0"},
@@ -320,6 +372,35 @@ numpy = [
     {file = "numpy-1.23.5-pp38-pypy38_pp73-win_amd64.whl", hash = "sha256:01dd17cbb340bf0fc23981e52e1d18a9d4050792e8fb8363cecbf066a84b827d"},
     {file = "numpy-1.23.5.tar.gz", hash = "sha256:1b1766d6f397c18153d40015ddfc79ddb715cabadc04d2d228d4e5a8bc4ded1a"},
 ]
+ortools = [
+    {file = "ortools-9.5.2237-cp310-cp310-macosx_10_15_x86_64.whl", hash = "sha256:b86f45e66bf1335bf3f7e43b8611dcb849a0cf64f6a66a558d26947dacffc64b"},
+    {file = "ortools-9.5.2237-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:79b491d0eb092f4f3fe06ffc35a4921a2b7055523d164a381517bfb5c20be8ea"},
+    {file = "ortools-9.5.2237-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:68908bc2b82381349fec89b3092a01d959e7e5f1a1769a5afc67493e146395fb"},
+    {file = "ortools-9.5.2237-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b439a4735456c689556007c96fcacf0290b5881517b7a2d25266ab1cdd3d9235"},
+    {file = "ortools-9.5.2237-cp310-cp310-win_amd64.whl", hash = "sha256:a4ea77b0c6ae3cd339f1eff969619510c8a98c9dc4ee9291a50cda298084b35b"},
+    {file = "ortools-9.5.2237-cp311-cp311-macosx_10_15_x86_64.whl", hash = "sha256:e6cc55e60c466b5859e0a414f221b4c707e2a68f51c85c1379c4e35305c2d797"},
+    {file = "ortools-9.5.2237-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:6507811a80d315cf20f69408ca41df017278f6e0d7ed9f42271a75f9d50b3842"},
+    {file = "ortools-9.5.2237-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:344f45ce5709bf82c889e442a7bcd5cd86e9086750efd68e1f9562583a76a6a8"},
+    {file = "ortools-9.5.2237-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3148eae10f7c9071eea138c6c12cf0da14428f1a401ad7b50d3999ed09ed15e0"},
+    {file = "ortools-9.5.2237-cp311-cp311-win_amd64.whl", hash = "sha256:db4471316b7f949d0a0d46bf0c44691d870d7ab66ef34c88b7c24fc7ec22d0ae"},
+    {file = "ortools-9.5.2237-cp36-cp36m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:1d32883d1ba3e25e0039312ad4e5da22a6e457557960c27e11816a204cd7014c"},
+    {file = "ortools-9.5.2237-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2d8293d10065955abe8a428eae35a49c338a183d647f7be91e132b79c48038c9"},
+    {file = "ortools-9.5.2237-cp36-cp36m-win_amd64.whl", hash = "sha256:6ae39f1cb649958cd7cd3ac5608df0114054ee17069389bf299ed713ea562ba5"},
+    {file = "ortools-9.5.2237-cp37-cp37m-macosx_10_15_x86_64.whl", hash = "sha256:efbaa7281032412c22409c85bcf2b2478fcd283060457566997ef223b4502bfe"},
+    {file = "ortools-9.5.2237-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:622ef383febfdd50f240b90982e34fd396250e5501296bdc6dde70a9038ef915"},
+    {file = "ortools-9.5.2237-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e4caaf2cda3749d101ffb9a28f0e5e0aff3b22571b5ed68e8829a01dbf10d628"},
+    {file = "ortools-9.5.2237-cp37-cp37m-win_amd64.whl", hash = "sha256:387910618bbb003f9ce0c706291f88ba03f0cc3fbda998616639f02ae69f8459"},
+    {file = "ortools-9.5.2237-cp38-cp38-macosx_10_15_x86_64.whl", hash = "sha256:9fcd383f4ced260343602f8a2f1c65f6bc24fd0a1c684f8f040fa906d08a86d0"},
+    {file = "ortools-9.5.2237-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:0e8bb341e2949b393b68315cd841c8a79893e97defd0b7666847bc104b1713e9"},
+    {file = "ortools-9.5.2237-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:313bc41c192f645433c7559e10dea74074d4f2523759aa0c6cbad966b58aa853"},
+    {file = "ortools-9.5.2237-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:26b401a5644b493418f3ec434f95d6f1e7662ec1341dba8cf9c59ec33702d9e1"},
+    {file = "ortools-9.5.2237-cp38-cp38-win_amd64.whl", hash = "sha256:637f782bfb9bdea2e216e3515c303e61198d504821ea3a359e3c6e616d26153a"},
+    {file = "ortools-9.5.2237-cp39-cp39-macosx_10_15_x86_64.whl", hash = "sha256:11e33108dbbee2d045fbd8a099a3ffbf77eae58d7d6a237073833ba0571e6bbd"},
+    {file = "ortools-9.5.2237-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:f95f19a9d3d2e31286da5c0fc799d474ab8568240760c1555c4006cd4bf93ab9"},
+    {file = "ortools-9.5.2237-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7aaa37f7e984f454ad33e81a22337b1a1a2f4269d5112853585dd391c77affc6"},
+    {file = "ortools-9.5.2237-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9479343f0b83619d275cfdda694764db0899e23b6c500e837e0e3710c891d1a5"},
+    {file = "ortools-9.5.2237-cp39-cp39-win_amd64.whl", hash = "sha256:b0acc463af9ea4413ab4833041fb3e8055e24bd4535f913fffb6bc0eb89e0a94"},
+]
 pathspec = [
     {file = "pathspec-0.10.3-py3-none-any.whl", hash = "sha256:3c95343af8b756205e2aba76e843ba9520a24dd84f68c22b9f93251507509dd6"},
     {file = "pathspec-0.10.3.tar.gz", hash = "sha256:56200de4077d9d0791465aa9095a01d421861e405b5096955051deefd697d6f6"},
@@ -327,6 +408,22 @@ pathspec = [
 platformdirs = [
     {file = "platformdirs-2.6.0-py3-none-any.whl", hash = "sha256:1a89a12377800c81983db6be069ec068eee989748799b946cce2a6e80dcc54ca"},
     {file = "platformdirs-2.6.0.tar.gz", hash = "sha256:b46ffafa316e6b83b47489d240ce17173f123a9b9c83282141c3daf26ad9ac2e"},
+]
+protobuf = [
+    {file = "protobuf-4.21.12-cp310-abi3-win32.whl", hash = "sha256:b135410244ebe777db80298297a97fbb4c862c881b4403b71bac9d4107d61fd1"},
+    {file = "protobuf-4.21.12-cp310-abi3-win_amd64.whl", hash = "sha256:89f9149e4a0169cddfc44c74f230d7743002e3aa0b9472d8c28f0388102fc4c2"},
+    {file = "protobuf-4.21.12-cp37-abi3-macosx_10_9_universal2.whl", hash = "sha256:299ea899484ee6f44604deb71f424234f654606b983cb496ea2a53e3c63ab791"},
+    {file = "protobuf-4.21.12-cp37-abi3-manylinux2014_aarch64.whl", hash = "sha256:d1736130bce8cf131ac7957fa26880ca19227d4ad68b4888b3be0dea1f95df97"},
+    {file = "protobuf-4.21.12-cp37-abi3-manylinux2014_x86_64.whl", hash = "sha256:78a28c9fa223998472886c77042e9b9afb6fe4242bd2a2a5aced88e3f4422aa7"},
+    {file = "protobuf-4.21.12-cp37-cp37m-win32.whl", hash = "sha256:3d164928ff0727d97022957c2b849250ca0e64777ee31efd7d6de2e07c494717"},
+    {file = "protobuf-4.21.12-cp37-cp37m-win_amd64.whl", hash = "sha256:f45460f9ee70a0ec1b6694c6e4e348ad2019275680bd68a1d9314b8c7e01e574"},
+    {file = "protobuf-4.21.12-cp38-cp38-win32.whl", hash = "sha256:6ab80df09e3208f742c98443b6166bcb70d65f52cfeb67357d52032ea1ae9bec"},
+    {file = "protobuf-4.21.12-cp38-cp38-win_amd64.whl", hash = "sha256:1f22ac0ca65bb70a876060d96d914dae09ac98d114294f77584b0d2644fa9c30"},
+    {file = "protobuf-4.21.12-cp39-cp39-win32.whl", hash = "sha256:27f4d15021da6d2b706ddc3860fac0a5ddaba34ab679dc182b60a8bb4e1121cc"},
+    {file = "protobuf-4.21.12-cp39-cp39-win_amd64.whl", hash = "sha256:237216c3326d46808a9f7c26fd1bd4b20015fb6867dc5d263a493ef9a539293b"},
+    {file = "protobuf-4.21.12-py2.py3-none-any.whl", hash = "sha256:a53fd3f03e578553623272dc46ac2f189de23862e68565e83dde203d41b76fc5"},
+    {file = "protobuf-4.21.12-py3-none-any.whl", hash = "sha256:b98d0148f84e3a3c569e19f52103ca1feacdac0d2df8d6533cf983d1fda28462"},
+    {file = "protobuf-4.21.12.tar.gz", hash = "sha256:7cd532c4566d0e6feafecc1059d04c7915aec8e182d1cf7adee8b24ef1e2e6ab"},
 ]
 pylint = [
     {file = "pylint-2.15.9-py3-none-any.whl", hash = "sha256:349c8cd36aede4d50a0754a8c0218b43323d13d5d88f4b2952ddfe3e169681eb"},
