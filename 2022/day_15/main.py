@@ -6,7 +6,7 @@ from shapely import Polygon, difference
 
 val_input = "input"
 
-sensors = [list(map(int, re.findall("-?\d+", line))) for line in open(val_input).read().splitlines()]
+sensors = [list(map(int, re.findall(r"-?\d+", line))) for line in open(val_input).read().splitlines()]
 
 beacons = set()
 empty = set()

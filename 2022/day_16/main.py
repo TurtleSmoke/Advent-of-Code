@@ -3,7 +3,7 @@ import re
 
 val_input = "input"
 
-lines_infos = [re.findall("[A-Z][A-Z]|\d+", line) for line in open(val_input).read().splitlines()]
+lines_infos = [re.findall(r"[A-Z][A-Z]|\d+", line) for line in open(val_input).read().splitlines()]
 
 graph = {x[0]: set(x[1:]) for x in lines_infos}
 flow = {x[0]: int(x[1]) for x in lines_infos if int(x[1]) != 0}
