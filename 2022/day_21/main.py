@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 from operator import add, mul, truediv, sub
 
-val_input = "input"
+val_input = "test_input"
 
 fun = {"+": add, "-": sub, "*": mul, "/": truediv}
 
-values = {k: v.strip().split(" ") for line in open(val_input).read().splitlines() for k, v in [line.split(":")]}
-known_init = {k: int(v[0]) for k, v in values.items() if v[0].isdigit()}
-unknown_init = {k: v for k, v in values.items() if k not in known_init}
+init_values = {k: v.strip().split(" ") for line in open(val_input).read().splitlines() for k, v in [line.split(":")]}
+known_init = {k: int(v[0]) for k, v in init_values.items() if v[0].isdigit()}
+unknown_init = {k: v for k, v in init_values.items() if k not in known_init}
 
 
 def solve(unknown, known):
