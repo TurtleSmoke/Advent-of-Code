@@ -37,6 +37,9 @@ poetry install
 
 ### Run solutions
 
+Before running the solution, you must add your input in the correct folder with
+the name `input`.
+
 While being in a python env, you can run each day's solution with `./main.py`
 directly from the day's folder. Otherwise, use `python main.py`.
 
