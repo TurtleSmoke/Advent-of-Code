@@ -1,13 +1,10 @@
 #!/usr/bin/env python
-file_input = "input"
+input_file = "input"
 
-t = lambda x: (ord(x) % 65 + 27) % 58
+val = open(input_file).read().splitlines()
 
-val = [(line[: len(line) // 2], line[len(line) // 2 :]) for line in open(file_input).read().splitlines()]
-res1 = [set(a).intersection(set(b)) for a, b in val]
+res1 = [set(line[: len(line) // 2]) & set(line[len(line) // 2 :]) for line in val]
+res2 = [set(a) & set(b) & set(c) for a, b, c in zip(val[::3], val[1::3], val[2::3])]
 
-val = open(file_input).read().splitlines()
-res2 = [set(a).intersection(set(b)).intersection(set(c)) for a, b, c in zip(val[::3], val[1::3], val[2::3])]
-
-print(sum(t(list(x)[0]) for x in res1))
-print(sum(t(list(x)[0]) for x in res2))
+print(sum((ord(max(x)) - 96) % 58 for x in res1))
+print(sum((ord(max(x)) - 96) % 58 for x in res2))

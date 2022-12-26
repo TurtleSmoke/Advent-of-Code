@@ -1,21 +1,11 @@
 #!/usr/bin/env python
 from itertools import product
-
 import numpy as np
 
-val_input = "input"
+input_file = "input"
 
-tree_grid = np.genfromtxt(val_input, delimiter=1, dtype=int)
-tree_dirs = np.array(
-    [
-        np.rot90(np.maximum.accumulate(np.rot90(np.pad(tree_grid, 1, constant_values=-1), r), axis=1)[1:-1, :-2], -r)
-        for r in range(4)
-    ]
-)
+tree_grid = np.genfromtxt(input_file, delimiter=1, dtype=int)
 
-print(np.sum(np.logical_or.reduce(tree_dirs - tree_grid < 0)))
-
-# Without padding using np.diff
 tree_dirs = np.array(
     [np.rot90((np.diff(np.maximum.accumulate(np.rot90(tree_grid, r), 1), 1) != 0)[1:-1, :-1], -r) for r in range(4)]
 )
@@ -26,7 +16,7 @@ print(
     max(
         np.product(
             list(
-                next((i + 1 for i in range(len(tree_view)) if tree_view[i] >= tree_grid[x][y]), len(tree_view))
+                next((i + 1 for i, t in enumerate(tree_view) if t >= tree_grid[x][y]), len(tree_view))
                 for tree_view in [
                     tree_grid[x][y - 1 :: -1],
                     tree_grid[x][y + 1 : :],

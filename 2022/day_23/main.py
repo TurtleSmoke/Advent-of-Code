@@ -2,11 +2,11 @@
 from collections import Counter
 from itertools import count
 
-val_input = "input"
+input_file = "input"
 
 elves = {
     complex(x, y)
-    for y, row in enumerate(open(val_input).read().splitlines())
+    for y, row in enumerate(open(input_file).read().splitlines())
     for x, val in enumerate(row)
     if val == "#"
 }

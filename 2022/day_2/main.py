@@ -1,13 +1,10 @@
 #!/usr/bin/env python
-val_input = "input"
+input_file = "input"
 
-t = lambda x: ord(x) % 65 % 23
-val = [tuple(t(x) for x in lines.split(" ")) for lines in open(val_input).read().splitlines()]
-res1 = [(b + 1 + (b - a + 1) % 3 * 3) for a, b in val]
+data = open(input_file).read().replace(" ", "").splitlines()
 
-t = lambda x: ord(x) % 65 % 23
-val = [tuple(t(x) for x in lines.split(" ")) for lines in open(val_input).read().splitlines()]
-res2 = [(b * 3 + (b + a - 1) % 3 + 1) for a, b in val]
+part1 = {"BX": 1, "CY": 2, "AZ": 3, "AX": 4, "BY": 5, "CZ": 6, "CX": 7, "AY": 8, "BZ": 9}
+part2 = {"BX": 1, "CX": 2, "AX": 3, "AY": 4, "BY": 5, "CY": 6, "CZ": 7, "AZ": 8, "BZ": 9}
 
-print(sum(res1))
-print(sum(res2))
+print(sum(map(part1.get, data)))
+print(sum(map(part2.get, data)))

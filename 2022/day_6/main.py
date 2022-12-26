@@ -1,9 +1,7 @@
 #!/usr/bin/env python
-file_input = "input"
+input_file = "input"
 
-val = open(file_input).read().strip()
-res1 = next(i + 4 for i in range(len(val) - 4) if len(set(val[i : i + 4])) == 4)
-res2 = next(i + 14 for i in range(len(val) - 14) if len(set(val[i : i + 14])) == 14)
+val = open(input_file).read().strip()
 
-print(res1)
-print(res2)
+print(next(i + 4 for i in range(len(val)) if len(set(val[i : i + 4])) == 4))
+print(next(i + 14 for i in range(len(val)) if len(set(val[i : i + 14])) == 14))

@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 from itertools import count
 
-val_input = "input"
+input_file = "input"
 
-data = open(val_input).read().splitlines()
+data = open(input_file).read().splitlines()
 max_h, max_w = len(data) - 2, len(data[0]) - 2
 dirs = {"<": -1, ">": 1, "^": -1j, "v": 1j, "X": 0}
 init_blizzards = {(complex(x - 1, y - 1), dirs[c]) for y, l in enumerate(data) for x, c in enumerate(l) if c in "<>^v"}

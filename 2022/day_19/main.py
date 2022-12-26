@@ -3,9 +3,9 @@ import re
 from math import prod
 from cpmpy import Model, cpm_array, intvar
 
-val_input = "input"
+input_file = "input"
 
-blueprints = [tuple(map(int, re.findall(r"\d+", line)))[1:] for line in open(val_input).read().splitlines()]
+blueprints = [tuple(map(int, re.findall(r"\d+", line)))[1:] for line in open(input_file).read().splitlines()]
 
 
 def cp(step, available_blueprints):

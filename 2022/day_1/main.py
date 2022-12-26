@@ -1,10 +1,7 @@
 #!/usr/bin/env python
-val_input = "input"
+input_file = "input"
 
-val = [sum(int(line.strip()) for line in lines.strip().split("\n")) for lines in open(val_input).read().split("\n\n")]
+data = [sum(map(int, lines.split("\n"))) for lines in open(input_file).read().strip().split("\n\n")]
 
-res1 = max(val)
-res2 = sorted(val)[-3:]
-
-print(res1)
-print(sum(res2))
+print(max(data))
+print(sorted(data)[-3:])

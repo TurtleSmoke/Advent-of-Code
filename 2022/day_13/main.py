@@ -2,18 +2,18 @@
 
 from ast import literal_eval
 
-val_input = "input"
+input_file = "input"
 
-packets = [tuple(map(literal_eval, line.strip().split("\n"))) for line in open(val_input).read().split("\n\n")]
+packets = [tuple(map(literal_eval, line.split("\n"))) for line in open(input_file).read().strip().split("\n\n")]
 
 
 def compare(left, right):
-    if isinstance(left, int) and isinstance(right, int):
+    if type(left) == type(right) == int:
         return right - left
-    elif isinstance(left, int):
-        left = [left]
-    elif isinstance(right, int):
-        right = [right]
+    elif type(left) == int:
+        return compare([left], right)
+    elif type(right) == int:
+        return compare(left, [right])
 
     if len(left) == 0 or len(right) == 0:
         return len(right) - len(left)

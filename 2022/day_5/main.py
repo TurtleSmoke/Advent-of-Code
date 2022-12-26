@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 from copy import deepcopy
 
-file_input = "input"
+input_file = "test_input"
 
-crates, moves = open(file_input).read().split("\n\n")
-crates = [list("".join(x[:-1]).strip()) for x in list(zip(*crates.splitlines()))[1::4]]
+crates, moves = open(input_file).read().split("\n\n")
+crates = [list("".join(x[:-1]).strip()) for x in zip(*crates.splitlines())][1::4]
 moves = [list(map(int, x.split(" ")[1::2])) for x in moves.splitlines()]
 
 res1, res2 = deepcopy(crates), deepcopy(crates)

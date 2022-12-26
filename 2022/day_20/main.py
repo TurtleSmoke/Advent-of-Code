@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
-val_input = "input"
+input_file = "input"
 
-coordinates = [(i, int(v)) for i, v in enumerate(open(val_input).read().splitlines())]
+coordinates = [(i, int(v)) for i, v in enumerate(open(input_file).read().splitlines())]
 
 
 def solve(n, values):

@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 from collections import defaultdict
+from itertools import accumulate
 
-file_input = "input"
+input_file = "input"
 
-val = [line.split() for line in open(file_input).read().splitlines()]
-sizes = defaultdict(int)
+val = list(map(str.split, open(input_file).read().splitlines()))
+dirs = defaultdict(int)
 path = []
 
 for v in val:
@@ -12,8 +13,8 @@ for v in val:
         if v[1] == "cd":
             path.pop() if v[2] == ".." else path.append(v[2])
     elif v[0] != "dir":
-        for i in range(len(path)):
-            sizes["/".join(path[: i + 1])] += int(v[0])
+        for p in accumulate(path, lambda x, y: x + "/" + y):
+            dirs[p] += int(v[0])
 
-print(sum(size for size in sizes.values() if size <= 100000))
-print(min(size for size in sizes.values() if size > (30000000 - (70000000 - sizes["/"]))))
+print(sum(size for size in dirs.values() if size <= 100_000))
+print(min(size for size in dirs.values() if size > dirs["/"] - 40_000_000))

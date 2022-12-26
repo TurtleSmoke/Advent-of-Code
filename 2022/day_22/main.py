@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 import re
 
-val_input = "input"
+input_file = "input"
 
-data = open(val_input).read().split("\n\n")
+data = open(input_file).read().split("\n\n")
 grid = data[0].splitlines()
 path = re.findall(r"\d+|[LR]", data[1])
 

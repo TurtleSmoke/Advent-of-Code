@@ -2,9 +2,9 @@
 from heapq import heappop, heappush
 import numpy as np
 
-val_input = "input"
+input_file = "input"
 
-grid = np.array([list(map(ord, line)) for line in open(val_input).read().splitlines()])
+grid = np.array([list(map(ord, line)) for line in open(input_file).read().splitlines()])
 source, target = np.where(grid == ord("S")), np.where(grid == ord("E"))
 grid[source] = ord("a")
 grid[target] = ord("z")
