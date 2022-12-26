@@ -5,10 +5,12 @@ on:
     branches: [ main ]
     paths:
       - '**.py'
+      - '.pylintrc'
   pull_request:
     branches: [ main ]
     paths:
       - '**.py'
+      - '.pylintrc'
 
 jobs:
   build:
