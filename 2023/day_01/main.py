@@ -1,9 +1,9 @@
 # !/usr/bin/env python
 import re
 
-text = "input"
+input_file = "input"
 
-values = open(text).read().split("\n")
+values = open(input_file).read().split("\n")
 
 mappings = {str(i): i for i in range(10)} | {
     "one": 1,
