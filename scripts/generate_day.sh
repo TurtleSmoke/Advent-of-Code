@@ -1,6 +1,6 @@
 #!/bin/sh
 
-AOC_YEAR="${AOC_YEAR:-2022}"
+AOC_YEAR="${AOC_YEAR:-2023}"
 AOC_DAY="$1"
 AOC_SESSION=$(cat session_cookie)
 dir="$AOC_YEAR/day_$AOC_DAY"
