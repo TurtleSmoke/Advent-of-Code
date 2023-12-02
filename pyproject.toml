@@ -15,6 +15,7 @@ black = "^22.10.0"
 shapely = "^2.0.0"
 scipy = "^1.9.3"
 cpmpy = "^0.9.10"
+parse = "^1.20.0"
 
 [tool.black]
 line-length = 120
