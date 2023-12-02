@@ -17,9 +17,7 @@ mappings = {str(i): i for i in range(10)} | {
     "nine": 9,
 }
 
-res1 = [re.findall(r"\d", line) for line in values]
-res2 = [re.findall(r"(?=(" + "|".join(mappings) + "))", line) for line in values]
 get_res = lambda res: sum(mappings[line[0]] * 10 + mappings[line[-1]] for line in res)
 
-print(get_res(res1))
-print(get_res(res2))
+print(get_res([re.findall(r"\d", line) for line in values]))
+print(get_res([re.findall(r"(?=(" + "|".join(mappings) + "))", line) for line in values]))
