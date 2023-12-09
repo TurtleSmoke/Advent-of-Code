@@ -26,7 +26,7 @@ def cp(step, available_blueprints):
 
         bots = intvar(0, 100, shape=(4, step + 1))
         resources = intvar(0, 100, shape=(4, step + 1))
-        construct = intvar(0, 4, shape=(step + 1))
+        construct = intvar(0, 4, shape=step + 1)
 
         for r in range(4):
             model += bots[r, 0] == (1 if r == 0 else 0)
