@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from operator import add, mul, truediv, sub
 
-input_file = "test_input"
+input_file = "input"
 
 fun = {"+": add, "-": sub, "*": mul, "/": truediv}
 

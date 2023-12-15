@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-input_file = "test_input"
+input_file = "input"
 input_nums = [list(map(int, line.split())) for line in open(input_file).readlines()]
 
 

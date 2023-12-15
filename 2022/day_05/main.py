@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from copy import deepcopy
 
-input_file = "test_input"
+input_file = "input"
 
 crates, moves = open(input_file).read().split("\n\n")
 crates = [list("".join(x[:-1]).strip()) for x in zip(*crates.splitlines())][1::4]

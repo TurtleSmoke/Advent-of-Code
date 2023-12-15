@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-input_file = "test_input"
+input_file = "input"
 
 val = [
     [set(range(int(a), int(b) + 1)) for v in lines.split(",") for a, b in [v.split("-")]]

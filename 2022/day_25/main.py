@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from functools import reduce
 
-input_file = "test_input"
+input_file = "input"
 
 data = open(input_file).read().splitlines()
 converted = sum(reduce(lambda x, y: x * 5 + "=-012".index(y) - 2, line, 0) for line in data)

@@ -6,7 +6,7 @@ from functools import reduce
 
 input_file = "input"
 
-values = open("test_input").read().splitlines()
+values = open(input_file).read().splitlines()
 
 get_max_color = lambda regex, game: max(int(match) for match in re.findall(regex, game))
 games = {
