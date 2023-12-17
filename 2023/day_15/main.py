@@ -4,19 +4,17 @@ from functools import reduce
 input_file = "input"
 
 input_sequence = open(input_file).read().split(",")
-
 hash_algorithm = lambda string: reduce(lambda h, c: ((h + ord(c)) * 17) % 256, string, 0)
 
 
 def hashmap(sequence):
     boxes = [{} for _ in range(256)]
     for step in sequence:
-        if step[-1] == "-":
-            label = step[:-1]
-            boxes[hash_algorithm(label)].pop(label, None)
-        else:
-            label, focal = step[:-2], int(step[-1])
-            boxes[hash_algorithm(label)][label] = focal
+        match step.strip("-").split("="):
+            case [label, focal]:
+                boxes[hash_algorithm(label)][label] = int(focal)
+            case [label]:
+                boxes[hash_algorithm(label)].pop(label, None)
 
     return boxes
 

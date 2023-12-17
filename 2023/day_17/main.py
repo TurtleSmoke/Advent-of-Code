@@ -3,6 +3,7 @@
 import heapq
 
 input_file = "input"
+
 input_grid = {
     i + j * 1j: int(c) for i, line in enumerate(open(input_file).readlines()) for j, c in enumerate(line.strip())
 }
