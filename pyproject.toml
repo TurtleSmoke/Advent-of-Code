@@ -17,6 +17,7 @@ scipy = "^1.9.3"
 cpmpy = "^0.9.10"
 parse = "^1.20.0"
 sympy = "^1.12"
+z3-solver = "^4.12.4.0"
 
 [tool.black]
 line-length = 120
