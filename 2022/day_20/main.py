@@ -8,7 +8,7 @@ coordinates = [(i, int(v)) for i, v in enumerate(open(input_file).read().splitli
 def solve(n, values):
     original = values.copy()
     for _ in range(n):
-        for (i, v) in original:
+        for i, v in original:
             current = values.index((i, v))
             values.insert((current + v) % (len(values) - 1), values.pop(current))
     idx_zero = next(i for i, v in enumerate(values) if v[1] == 0)

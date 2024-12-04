@@ -1,30 +1,35 @@
-[tool.poetry]
+[project]
 name = "advent-of-code"
 version = "0.1.0"
 description = "Advent Of Code repo"
-authors = ["TurtleSmoke"]
+authors = [
+    { name = "TurtleSmoke" },
+]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "advent_of_code"}]
+requires-python = ">=3.10"
 
-[tool.poetry.dependencies]
-python = "^3.10"
-numpy = "^1.23.5"
-pylint = "^2.15.8"
-black = "^22.10.0"
-shapely = "^2.0.0"
-scipy = "^1.9.3"
-cpmpy = "^0.9.10"
-parse = "^1.20.0"
-sympy = "^1.12"
-z3-solver = "^4.12.4.0"
-networkx = "^3.2.1"
+# cpmpy is also required for one day, but ortools can't be installed with uv.
+# At least I can't...
+dependencies = [
+    "networkx>=3.4.2",
+    "numpy>=2.1.3",
+    "parse>=1.20.2",
+    "ruff>=0.8.1",
+    "scipy>=1.14.1",
+    "shapely>=2.0.6",
+    "sympy>=1.13.3",
+    "z3-solver>=4.13.3.0",
+]
 
-[tool.black]
+[tool.ruff]
 line-length = 120
-target-version = ['py310']
+target-version = "py310"
 
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.ruff.lint]
+select = ["E", "F"]
+ignore = [
+    'E731', # lambda: _: print('Let me lambda freely')
+    'E741', # It's not ambiguous, it's as clear as crystal...
+    'E721' # I should use isinstance() for sure, except I actually want this weird type comparaison
+]

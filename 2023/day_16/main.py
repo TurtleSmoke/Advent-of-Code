@@ -13,7 +13,7 @@ def energized_grid(mirrors, start_pos, start_dir):
     while rays:
         cur_pos, cur_dir = rays.pop()
 
-        while not (cur_pos, cur_dir) in cache:
+        while (cur_pos, cur_dir) not in cache:
             cache.add((cur_pos, cur_dir))
             cur_pos += cur_dir
             if cur_pos not in mirrors:

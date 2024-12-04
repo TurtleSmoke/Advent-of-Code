@@ -16,7 +16,7 @@ def solve_part1(f):
     coords = [line for line in coords if all(0 <= x <= 100 for x in line[1:])]
     cube = np.zeros(101 * 101 * 101).reshape((101, 101, 101))
 
-    for (v, x1, x2, y1, y2, z1, z2) in coords:
+    for v, x1, x2, y1, y2, z1, z2 in coords:
         sub_cube = np.full((x2 - x1 + 1, y2 - y1 + 1, z2 - z1 + 1), "on" == v)
         cube[x1 : x2 + 1, y1 : y2 + 1, z1 : z2 + 1] = sub_cube
 

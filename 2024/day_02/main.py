@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-input_file = 'input'
+input_file = "input"
 
 reports = [list(map(int, line.strip().split())) for line in open(input_file)]
 
@@ -11,8 +11,9 @@ def is_safe(nums):
 
 
 def is_safe_with_dampener(nums):
-    if is_safe(nums): return True
-    return any(is_safe(nums[:i] + nums[i + 1:]) for i in range(len(nums)))
+    if is_safe(nums):
+        return True
+    return any(is_safe(nums[:i] + nums[i + 1 :]) for i in range(len(nums)))
 
 
 print(sum(map(is_safe, reports)))

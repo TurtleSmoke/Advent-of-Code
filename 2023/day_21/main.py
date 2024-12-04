@@ -16,13 +16,16 @@ def walking(sparse, size, remainder):
 
     new_dirs = [(1, 0), (-1, 0), (0, 1), (0, -1)]
     for i in range(1, 2 * size + remainder + 1):
-        visited, new = new, {
-            new_pos
-            for pos in new
-            for direction in new_dirs
-            for new_pos in [addp(pos, direction)]
-            if new_pos not in visited and modp(new_pos) in sparse
-        }
+        visited, new = (
+            new,
+            {
+                new_pos
+                for pos in new
+                for direction in new_dirs
+                for new_pos in [addp(pos, direction)]
+                if new_pos not in visited and modp(new_pos) in sparse
+            },
+        )
         cache[i] = len(new) + cache[i - 2]
 
     return cache

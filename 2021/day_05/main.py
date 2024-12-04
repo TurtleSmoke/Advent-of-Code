@@ -8,7 +8,7 @@ values = [list(map(int, re.findall(r"\d+", l))) for l in values]
 s1 = set()
 s2 = set()
 
-for (x1, y1, x2, y2) in values:
+for x1, y1, x2, y2 in values:
     if x1 == x2:
         for y in range(min(y1, y2), max(y1, y2) + 1):
             s1.add((x1, y)) if (x1, y) not in s1 else s2.add((x1, y))
@@ -21,7 +21,7 @@ print(len(set.intersection(s1, s2)))
 s1 = set()
 s2 = set()
 
-for (x1, y1, x2, y2) in values:
+for x1, y1, x2, y2 in values:
     if x1 == x2:
         for y in range(min(y1, y2), max(y1, y2) + 1):
             s1.add((x1, y)) if (x1, y) not in s1 else s2.add((x1, y))
