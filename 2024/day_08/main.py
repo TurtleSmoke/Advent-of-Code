@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 import itertools
 
-intput_file = "input"
+input_file = "input"
 
-data = {x + 1j * y: c for y, row in enumerate(open(intput_file)) for x, c in enumerate(row.strip())}
+data = {x + 1j * y: c for y, row in enumerate(open(input_file)) for x, c in enumerate(row.strip())}
 
 antennas_pos = [
     [pos for pos in data.keys() if data[pos] == antenna_type] for antenna_type in set(data.values()) - set(".")
