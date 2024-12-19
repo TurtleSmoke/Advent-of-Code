@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-input_file = "test_input"
+input_file = "input"
 
 data = [(i // 2 + 1 if i % 2 else 0, int(d)) for i, d in enumerate(open(input_file).read().strip(), 1)]
 

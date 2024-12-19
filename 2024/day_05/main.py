@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from collections import defaultdict
 
-input_file = "test_input"
+input_file = "input"
 
 rules, updates = open(input_file).read().strip().split("\n\n")
 rules = set(tuple(map(int, line.split("|"))) for line in rules.split("\n"))

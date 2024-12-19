@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-input_file = "test_input"
+input_file = "input"
 
 input_mirrors = {(y + x * 1j): m for y, line in enumerate(open(input_file)) for x, m in enumerate(line.strip())}
 map_dir = {"|": lambda _: 1, "-": lambda _: -1j, "\\": lambda x: 1j / x, "/": lambda x: -1j / x, ".": lambda x: x}
