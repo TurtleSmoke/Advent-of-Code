@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from functools import reduce
 
-input_file = "test_input"
+input_file = "input"
 
 ranges, _, items = open(input_file).read().strip().partition("\n\n")
 ranges = list(sorted(tuple(map(int, line.split("-"))) for line in ranges.splitlines()))

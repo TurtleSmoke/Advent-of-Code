@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from collections import defaultdict
 
-input_file = "test_input"
+input_file = "input"
 
 grid = defaultdict(int, {x + y * 1j: c == "@" for y, line in enumerate(open(input_file)) for x, c in enumerate(line)})
 can_be_removed = lambda p: grid[p] and sum(grid[p + d] for d in [1, -1, 1j, -1j, 1 + 1j, 1 - 1j, -1 + 1j, -1 - 1j]) < 4

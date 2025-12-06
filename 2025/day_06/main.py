@@ -2,8 +2,7 @@
 import re
 from itertools import zip_longest
 
-
-input_file = "test_input"
+input_file = "input"
 
 operations = list(zip(*[s.split() for s in open(input_file).read().splitlines()]))
 operations2 = [
